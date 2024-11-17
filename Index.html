@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOTIFY - Play Music Yourself</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="indu.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>GOTIFY</h1>
+        <p class="tagline">Play Music Yourself</p>
+    </header>
+
+    <!-- Music Player Section -->
+    <main>
+        <div class="music-player">
+            <!-- Playlist -->
+            <div class="playlist">
+                <div class="song-item">
+                    <img src="Image/Minchagi.jpg" alt="Minchagi" onclick="playSong('Music/Minchagi.mp3', 'Image/Minchagi.jpg', 'Minchagi', 'Sonu Nigam and V. Harikrishna')">
+                    <div class="song-info">
+                        <p class="song-name" onclick="playSong('Music/Minchagi.mp3', 'Image/Minchagi.jpg', 'Minchagi', 'Sonu Nigam and V. Harikrishna')">Minchagi</p>
+                        <p class="artist-name">Sonu Nigam and V. Harikrishna</p>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="Image/Yen_Kadhal_Solla.jpg" alt="Yen Kadhal Solla" onclick="playSong('Music/Yen_Kadhal_Solla.mp3', 'Image/Yen_Kadhal_Solla.jpg', 'Yen Kadhal Solla', 'Yuvan Shankar Raja, Tanvi Shah')">
+                    <div class="song-info">
+                        <p class="song-name" onclick="playSong('Music/Yen_Kadhal_Solla.mp3', 'Image/Yen_Kadhal_Solla.jpg', 'Yen Kadhal Solla', 'Yuvan Shankar Raja, Tanvi Shah')">Yen Kadhal Solla</p>
+                        <p class="artist-name">Yuvan Shankar Raja, Tanvi Shah</p>
+                    </div>
+                </div>
+
+                <div class="song-item">
+                    <img src="Image/August_Diaries.jpg" alt="August Diaries" onclick="playSong('Music/August_Diaries.mp3', 'Image/August_Diaries.jpg', 'August Diaries', 'Dharia')">
+                    <div class="song-info">
+                        <p class="song-name" onclick="playSong('Music/August_Diaries.mp3', 'Image/August_Diaries.jpg', 'August Diaries', 'Dharia')">August Diaries</p>
+                        <p class="artist-name">Dharia</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio Player -->
+            <div class="player-bar">
+                <div class="left">
+                    <img id="songImage" src="" alt="Song Image" class="song-image">
+                    <div class="song-info">
+                        <p id="currentSongName" class="song-name">Select a song to play</p>
+                        <p id="currentArtistName" class="artist-name">Select a song</p>
+                    </div>
+                </div>
+                <div class="center">
+                    <div class="song-progress">
+                        <p id="currentTime" class="current-time">0:00</p>
+                        <input type="range" id="progressSlider" value="0" max="100" step="0.1" onchange="setProgress(this.value)">
+                        <p id="duration" class="duration">0:00</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <button id="prevBtn">
+                        <img src="Icon/Previous.png" alt="Previous" height="30px" width="30px">
+                    </button>
+                    <button id="playPauseBtn">
+                        <img src="Icon/Play.png" alt="Play" height="50px" width="50px">
+                    </button>
+                    <button id="nextBtn">
+                        <img src="Icon/Next.png" alt="Next" height="30px" width="30px">
+                    </button>
+                    <div class="volume-control">
+                        <img src="Icon/volume.png" alt="Volume Icon" onclick="toggleVolumeSlider()" height="50px" width="50px">
+            
+                        <input type="range" id="volumeSlider" min="0" max="100" value="50" onchange="setVolume(this.value)">
+                    </div>
+                    
+                </div>
+            </div>
+            <audio id="audioPlayer" controls style="display: none;"></audio>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 GOTIFY. All rights reserved. Play music yourself!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
